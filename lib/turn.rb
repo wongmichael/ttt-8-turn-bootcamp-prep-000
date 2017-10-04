@@ -15,10 +15,15 @@ def move(board,index,token="X")
   board[index]=token
 end
 
+def input_to_index(input)
+  input-1
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip.to_i
-  index = input - 1
+  #index = input - 1
+  index = input_to_index(input)
   if valid_move?(board,index)
     move(board,index)
     display_board(board)
